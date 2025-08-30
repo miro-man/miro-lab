@@ -1,0 +1,87 @@
+:root {
+  --blue-marine: #0A192F;
+  --black: #000;
+  --gold: #D4AF37;
+  --white: #FFF;
+  --light-gray: #F5F5F5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--blue-marine);
+  color: var(--white);
+  direction: rtl;
+  text-align: right;
+}
+
+header {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: var(--black);
+  border-bottom: 3px solid var(--gold);
+}
+
+header h1 {
+  font-size: 3rem;
+  color: var(--gold);
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--light-gray);
+}
+
+main {
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.item {
+  background-color: var(--black);
+  border: 2px solid var(--gold);
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--black);
+  border-top: 1px solid var(--gold);
+  color: var(--light-gray);
+}
