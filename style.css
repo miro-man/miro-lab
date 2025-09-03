@@ -1,176 +1,135 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Cairo', sans-serif;
-}
-
+/* --- الإعدادات الأساسية للجسم والخطوط --- */
 body {
-  background: #000;
-  color: #fff;
-  line-height: 1.8;
+    margin: 0;
+    font-family: Arial, sans-serif; /* يمكن تغيير هذا الخط إلى خط عربي أكثر أناقة */
+    direction: rtl; /* لجعل الكتابة من اليمين إلى اليسار */
+    text-align: right; /* لمحاذاة النص لليمين */
 }
 
-/* شاشة البداية */
-#hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: url('https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  position: relative;
-  text-align: center;
+/* --- تنسيق الواجهة الرئيسية (Hero Section) --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* لتغطية كامل ارتفاع الشاشة */
+    position: relative;
+    overflow: hidden; /* لمنع ظهور أي جزء يخرج عن الحدود */
 }
 
-#hero .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.7);
+.top-half {
+    background-color: #000033; /* لون أزرق داكن (Navy Blue) */
+    position: relative; /* مهم للتحكم في الفاصل */
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 2rem;
 }
 
-.logo {
-  font-size: 4rem;
-  color: gold;
-  z-index: 2;
-  animation: glow 2s infinite alternate;
+.bottom-half {
+    background-color: #ffffff; /* لون أبيض */
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.tagline {
-  z-index: 2;
-  font-size: 1.2rem;
-  margin-top: 10px;
+/* --- تنسيق الشعار الصغير واسمك في الأعلى --- */
+.small-logo-container {
+    text-align: center;
+    color: #ffffff;
+    position: absolute; /* وضعه في المنتصف بالأعلى */
+    top: 2rem;
 }
 
-.enter-btn {
-  z-index: 2;
-  margin-top: 20px;
-  padding: 10px 25px;
-  background: gold;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.enter-btn:hover {
-  background: crimson;
-  color: #fff;
+.small-logo {
+    width: 30px; /* حجم الشعار الصغير */
+    height: auto;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 10px gold; }
-  to { text-shadow: 0 0 30px red; }
+.name-text {
+    font-size: 0.8rem;
+    margin: 0;
+    margin-top: 5px;
 }
 
-/* الأقسام */
-section {
-  padding: 60px 20px;
-  text-align: center;
+/* --- تنسيق الفاصل المتحرك بين اللونين (الشق) --- */
+.separator-wave {
+    position: absolute;
+    bottom: -150px; /* لإظهار جزء منه فقط */
+    width: 150%; /* لجعل الحركة تظهر بشكل كامل */
+    height: 300px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23000033" fill-opacity="1" d="M0,256L48,240C96,224,192,192,288,192C384,192,480,224,576,240C672,256,768,256,864,245.3C960,235,1056,213,1152,197.3C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: wave-animation 5s infinite linear;
 }
 
-h2 {
-  color: crimson;
-  margin-bottom: 20px;
-  font-size: 2rem;
+@keyframes wave-animation {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+/* --- تنسيق المحتوى الداخلي (الشعار الكبير والوصف) --- */
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%; /* التحكم في عرض المحتوى */
+    margin: auto;
+    flex-wrap: wrap; /* للسماح للعناصر بالنزول لأسفل في الشاشات الصغيرة */
 }
 
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 30px;
-  border: 1px solid crimson;
-  transition: 0.3s;
-}
-.card:hover {
-  transform: scale(1.05);
-  border-color: gold;
+.large-logo-container {
+    flex: 1;
+    min-width: 300px; /* للتحكم في حجم الشعار */
+    margin-left: 20px;
 }
 
-/* فورم الاتصال */
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: auto;
-  gap: 10px;
+.main-logo {
+    width: 100%;
+    height: auto;
 }
 
-form input, form textarea {
-  padding: 10px;
-  background: #111;
-  border: 1px solid crimson;
-  color: #fff;
+.description-container {
+    flex: 2;
+    padding: 20px;
+    min-width: 300px;
 }
 
-form button {
-  padding: 10px;
-  background: gold;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-form button:hover {
-  background: crimson;
-  color: #fff;
+.description-heading {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-
-.logo {
-  font-size: 5rem;
-  color: gold;
-  z-index: 2;
-  animation: glow 3s infinite alternate;
-  text-transform: uppercase;
-  letter-spacing: 5px;
+.description-text {
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-@keyframes glow {
-  0% { text-shadow: 0 0 20px gold; color: gold; }
-  50% { text-shadow: 0 0 40px crimson; color: crimson; }
-  100% { text-shadow: 0 0 60px gold; color: gold; }
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 20px;
+    background-color: #000033;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.tagline {
-  z-index: 2;
-  font-size: 1.5rem;
-  margin-top: 15px;
-  color: #fff;
+.cta-button:hover {
+    background-color: #000055; /* لون أزرق أغمق عند المرور بالماوس */
 }
 
-.enter-btn {
-  z-index: 2;
-  margin-top: 25px;
-  padding: 12px 30px;
-  background: gold;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-.enter-btn:hover {
-  background: crimson;
-  color: #fff;
-  box-shadow: 0 0 20px crimson;
-}
+/* --- تنسيقات إضافية للشاشات الصغيرة (Mobile Responsiveness) --- */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
 
-/* Canvas التأثيرات */
-#hero-canvas {
-  position: absolute;
-  top:0; left:0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
+    .large-logo-container, .description-container {
+        min-width: 100%;
+    }
 }
-
-
