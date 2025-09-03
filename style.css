@@ -121,3 +121,71 @@ form button:hover {
   background: crimson;
   color: #fff;
 }
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+#hero .overlay {
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1;
+}
+
+.logo {
+  font-size: 5rem;
+  color: gold;
+  z-index: 2;
+  animation: glow 3s infinite alternate;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 20px gold; color: gold; }
+  50% { text-shadow: 0 0 40px crimson; color: crimson; }
+  100% { text-shadow: 0 0 60px gold; color: gold; }
+}
+
+.tagline {
+  z-index: 2;
+  font-size: 1.5rem;
+  margin-top: 15px;
+  color: #fff;
+}
+
+.enter-btn {
+  z-index: 2;
+  margin-top: 25px;
+  padding: 12px 30px;
+  background: gold;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.enter-btn:hover {
+  background: crimson;
+  color: #fff;
+  box-shadow: 0 0 20px crimson;
+}
+
+/* Canvas التأثيرات */
+#hero-canvas {
+  position: absolute;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
