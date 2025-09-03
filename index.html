@@ -3,40 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعي الشخصي</title>
+  <title>MIRO MAN | الإمبراطورية</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>مرحباً، أنا [MIRO]</h1>
-    <p>مصمم ومبدع | أبتكر أفكارًا فريدة</p>
-  </header>
+  <!-- شاشة البداية -->
+  <section id="hero">
+    <div class="overlay"></div>
+    <h1 class="logo">MIRO MAN</h1>
+    <p class="tagline">الاسم الذي سيُغيّر الموازين…</p>
+    <a href="#about" class="enter-btn">ادخل العالم</a>
+  </section>
 
-  <main>
-    <section class="about">
-      <h2>من أنا</h2>
-      <p>
-       هدا انا :).
-      </p>
-    </section>
+  <!-- من هو ميرو مان -->
+  <section id="about">
+    <h2>من هو MIRO MAN؟</h2>
+    <p>
+      MIRO MAN ليس مجرد اسم… إنه قوة، علامة، كيان يتجاوز الحدود.  
+      إنه النظام الجديد الذي يُعيد تشكيل العالم على مقاسه.
+    </p>
+  </section>
 
-    <section class="showcase">
-      <h2>أعمالي وإبداعاتي</h2>
-      <div class="gallery">
-        <!-- مستقبلاً: هنا ستعرض صور أو روابط لتطبيقاتك أو أعمالك -->
-        <div class="item">قريباً...</div>
-      </div>
-    </section>
-  </main>
+  <!-- العلامة -->
+  <section id="brand">
+    <h2>الإمبراطورية</h2>
+    <div class="cards">
+      <div class="card">تصاميم رقمية</div>
+      <div class="card">إكسسوارات فاخرة</div>
+      <div class="card">المشاريع القادمة</div>
+    </div>
+  </section>
 
-  <footer>
-    <p>© 2025 جميع الحقوق محفوظة</p>
-  </footer>
-   <script src="script.js"></script>
-  <header>
-        <img src="assets/MIRO LOGO BK.png" alt="MIRO MAN Logo" width="150">
-        <h1>MIRO MAN</h1>
-        <p>القوة، السيطرة، الهيمنة الرقمية</p>
-  </header>
+  <!-- الرؤية -->
+  <section id="vision">
+    <h2>الرؤية</h2>
+    <p>
+      بحلول 2028، لن يكون MIRO MAN مجرد علامة… بل النظام ذاته.  
+      العالم سيُضاء باسمه وحده.
+    </p>
+  </section>
+
+  <!-- الاتصال -->
+  <section id="contact">
+    <h2>اتصل بالظل</h2>
+    <form>
+      <input type="text" placeholder="اسمك">
+      <input type="email" placeholder="بريدك الإلكتروني">
+      <textarea placeholder="رسالتك"></textarea>
+      <button type="submit">إرسال</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
